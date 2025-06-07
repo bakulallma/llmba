@@ -1,7 +1,7 @@
 from chess_game import ChessGame
 import chess
 import random
-import src.gui as gui # Import the gui module
+import gui # Import the gui module
 
 def get_player_name_tui(turn, game_mode, player_color_choice=None):
     """Gets player name for Text User Interface"""
@@ -119,8 +119,8 @@ def main():
         print("Starting GUI game...")
         # Ensure gui module is found, might need to adjust path if running from root vs src
         try:
-            import src.gui as gui
-            gui.run_gui_game(game, game_mode, player_color_choice)
+            # import src.gui as gui # This was the old way
+            gui.run_gui_game(game, game_mode, player_color_choice) # gui should be imported at the top
         except ImportError:
              print("Error: Could not import the GUI module. Make sure it's in the 'src' directory.")
         except Exception as e:
